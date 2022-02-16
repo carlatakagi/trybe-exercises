@@ -1,0 +1,5 @@
+function findSenior(list) {
+  // thank you for checking out the Coding Meetup kata :
+  const age = list.sort((a, b) => b.age - a.age).find(())
+  console.log(age);
+}
