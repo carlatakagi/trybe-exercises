@@ -12,4 +12,7 @@ SELECT * FROM sakila.film ORDER BY last_update;
 
 INSERT INTO sakila.film_actor (actor_id,film_id) VALUES
 (201, 1001),
-(202, 1002);
+(202, 1001);
+
+INSERT INTO sakila.inventory (film_id, store_id) VALUES (1001, 1);
+SELECT * FROM sakila.inventory;
