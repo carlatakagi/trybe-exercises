@@ -1,5 +1,5 @@
 {
-  "name": "hello-express",
+  "name": "aula-19-05",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,10 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
   }
 }

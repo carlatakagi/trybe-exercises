@@ -1,6 +1,11 @@
 const express = require('express');
 const routes = express.Router();
 const usersData = require('../data/users');
+const middlewares = require('../middlewares');
+
+//routes.use(middlewares.dummy);
+//routes.use(middlewares.logger);
+routes.use(middlewares.auth);
 
 routes.get('/users', function (_req, res) {
   res.status(200).json(usersData);
@@ -37,6 +42,19 @@ routes.get('/users', function (req, res) {
   res.status(201).json({message: 'Insert ok'});
 
 });
+
+routes.post('/users', function (req, res) {
+  const {id, name, email, phone, age, username} = req.body;
+  //req.body.teste.name = 'teste';
+  if (!id || !name || !email || !phone || !age || ! username) {
+      // return res.status(400).json({ message: "Bad Request" });
+      throw { status: 400, message: "Bad Request"};
+  }
+
+  usersData.push({id, name, email, phone, age, username});
+  res.status(201).json({message: 'Insert OK'});
+});
+
 
 routes.put('/users/:id', function (req, res) {
   const {id} = req.params;
