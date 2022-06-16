@@ -17,7 +17,7 @@ const create = async (request, response) => {
   const { title, author, pageQuantity } = request.body;
   const book = await BookService.create({ title, author, pageQuantity });
 
-  responsestatus(201).json(book);
+  response.status(201).json(book);
 };
 
 const update = async (request, response) => {
@@ -28,7 +28,7 @@ const update = async (request, response) => {
 
   if (!updatedUser) return responsestatus(404).json({ message: 'Book not found' });
 
-  responsestatus(201).json({ message: 'Book updated' });
+  response.status(201).json({ message: 'Book updated' });
 };
 
 module.exports = {
